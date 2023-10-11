@@ -305,7 +305,7 @@
 }
 .days-main {
   background-image: url("./component/image/trrr.png");
-  /* max-width: 1500px; */
+  
   width: 100%;
   height: 100vh;
 display: flex;
