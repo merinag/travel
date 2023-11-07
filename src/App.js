@@ -2,12 +2,15 @@ import React from "react";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Header from "./component/header";
 
 import Home from "./component/home";
 import About from "./component/About";
 import Contact from "./component/contact";
 import Adventures from "./component/adventures";
+import Register from "./component/RegisterPage";
+import Login from "./component/LoginPage";
+import Booking from  './component/Book'
+import Add from './component/add'
 function App() {
   return (
     <>
@@ -17,6 +20,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/adventures" element={<Adventures />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/book" element={<Booking />} />
+          <Route path="/add" element={<Add />} />
         </Routes>
       </div>
     </>
@@ -24,3 +31,7 @@ function App() {
 }
 
 export default App;
+
+//1, date
+// 2,quantity
+// 3,

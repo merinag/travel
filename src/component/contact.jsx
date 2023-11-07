@@ -3,8 +3,10 @@ import Header from "./header";
 import cloud from "./image/cloud.png";
 import Ventura from "./Ventura";
 import Footer from "./footer";
-import { Link } from "react-router-dom";
+
+import Contactlogin from "./contact-login";
 function Contact() {
+
   return (
     <div style={{ maxWidth: " 100%", width: " 1500px" }}>
       <div
@@ -89,7 +91,7 @@ function Contact() {
             gap: 50,
             marginLeft: "6rem",
             marginTop: "6rem",
-            flexWrap:'wrap'
+            flexWrap: "wrap",
           }}
         >
           <iframe
@@ -97,34 +99,12 @@ function Contact() {
             width="500"
             height="450"
             style={{ border: 0, backgroundColor: "lightBlue" }}
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
           <div className="contact-form">
-            <h1
-              style={{
-                fontFamily: "sans-serif",
-                fontSize: 40,
-                color: "#10221B",
-                textAlign: "center",
-              }}
-            >
-              Get in touch
-            </h1>
-            <form
-              style={{ display: "flex", flexDirection: "column", width: 550 }}
-            >
-              <input type="text" placeholder="Name" />
-              <input type="text" placeholder="Email" />
-              <input type="text" placeholder="Phone" />
-              <input type="textArea" placeholder="Message" />
-              <input
-                type="submit"
-                value="Submit"
-                style={{ backgroundColor: "rgb(4, 42, 4)", color: "white" }}
-              />
-            </form>
+            <Contactlogin/>
           </div>
         </div>
       </div>

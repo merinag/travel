@@ -1,57 +1,34 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from "react";
 
-class TimeCounter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      seconds: 0,
-      minutes: 0,
-      hours: 0,
+function Timercounter() {
+  const [scrolling, setScrolling] = useState(false);
+
+  // Add a scroll event listener
+  useEffect(() => {
+    const handleScroll = () => {
+      const rect = slidingComponentRef.current.getBoundingClientRect();
+      const isElementInViewport =
+        rect.top < window.innerHeight && rect.bottom >= 0;
+      setScrolling(isElementInViewport);
     };
-  }
 
-  componentDidMount() {
-    this.timer = setInterval(this.tick, 1000);
-  }
+    window.addEventListener("scroll", handleScroll);
 
-  componentWillUnmount() {
-    clearInterval(this.timer);
-  }
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-  tick = () => {
-    this.setState((prevState) => {
-      const seconds = prevState.seconds + 1;
-      let minutes = prevState.minutes;
-      let hours = prevState.hours;
+  const slidingComponentRef = React.createRef();
 
-      if (seconds === 60) {
-        minutes++;
-        seconds = 0;
-      }
-      if (minutes === 60) {
-        hours++;
-        minutes = 0;
-      }
-
-      return {
-        seconds,
-        minutes,
-        hours,
-      };
-    });
-  };
-
-  render() {
-    const { hours, minutes, seconds } = this.state;
-    return (
-      <div>
-        <h1>Time Counter</h1>
-        <p>
-          {String(hours).padStart(2, '0')}:{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
-        </p>
-      </div>
-    );
-  }
+  return (
+    <div
+      className={`sliding-component ${scrolling ? "scrolling" : ""}`}
+      ref={slidingComponentRef}
+    >
+      Hover or Scroll over me
+      <div className="content">Your content goes here...</div>
+    </div>
+  );
 }
-
-export default TimeCounter;
+export default Timercounter;

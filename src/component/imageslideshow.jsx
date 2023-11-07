@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 //  import './abay.jpg'
-import kesimg from "./image/coffe2.jpg";
+import kesimg from "./image/spagond.jpg";
 import afar from "./image/coffe3.jpg";
 import gonder from "./image/coffe1.jpg";
-import abay from "./image/coffe5.jpg";
-import woman from "./image/coffe4.jpg";
+import abay from "./image/sparod.jpg";
+import woman from "./image/spawensz.jpg";
 
 const colors = [
   {
     img: kesimg,
-    title: "Visit the Ancient Cave",
+    title: "Visit the Ancient builiding at Gonder",
     price: "Start from Birr3000.00",
   },
   {
@@ -19,17 +19,17 @@ const colors = [
   },
   {
     img: gonder,
-    title: "Visit the Ancient builiding at Gonder",
+    title: "Visit the Ancient chirstian church",
     price: "Start from Birr2500.00",
   },
   {
     img: abay,
-    title: "Visit the Simien Mountain ",
+    title: "Visit beautifull urban area ",
     price: "Start from Birr5500.00",
   },
   {
     img: woman,
-    title: "Beautifull Ethiopian Culture",
+    title: "Visit the Simien Mountain",
     price: "Start from Birr4000.00",
   },
 ];
@@ -77,7 +77,7 @@ function Slideshow() {
           {colors.map((color, index) => (
             <div className="slide" key={index}>
               <img
-                style={{ width: "100%", height: 400 }}
+                style={{ width:'100%', height: 400}}
                 src={color.img}
                 // alt={`Image ${index + 1}`}
               />

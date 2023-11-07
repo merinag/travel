@@ -1,48 +1,55 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useState } from "react";
-import afar from "./image/afar.jpg";
-import simien from "./image/simien.jpg";
+import afar from "./image/spaafar.jpg";
+import simien from "./image/spabrd.jpg";
 import bonga from "./image/semen.jpg";
 import bahrdar from "./image/coffe.jpg";
 import mainpic from "./image/adv.jpg";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Cloud() {
   const navigate = useNavigate();
-  function enquire() {
-    navigate("/contact");
-  }
-  const imageMain = [
-    {
-      img: afar,
-      title: "AFAR",
-      description: "kayling makes takes thrill to the next level.",
-      button: "Enquire",
-    },
-    {
-      img: simien,
-      title: "SIMIEN",
-      description: "kayling makes takes thrill to the next level.",
-      button: "Enquire",
-    },
-    {
-      img: bonga,
-      title: "BONGA",
-      description: "kayling makes takes thrill to the next level.",
-      button: "Enquire",
-    },
-    {
-      img: bahrdar,
-      title: "BAHIRDAR",
-      description: "kayling makes takes thrill to the next level.",
-      button: "Enquire",
-    },
-  ];
+  const [imageMain, setImageMain] = useState([]);
+  const enquire = (id) => {
+    navigate(`/book?id=${id}`)
+    // const response = await axios.post(
+    //   "http://localhost:3001/book",
+    //   { id: id },
+    //   {
+    //     headers: {
+    //       authorization: `Bearer ${localStorage.getItem("token")}`,
+    //     },
+    //   }
+    // );
+
+    // if(response.status==200){}
+    // else if(401){
+
+    // }
+  };
+
+  const runner = async () => {
+    try {
+      const result = await axios.get("http://localhost:3001/bookings");
+      const listed_result = await result.data;
+      console.log("LLLLLLLLLLLLLLLLLLLL");
+      console.log(listed_result);
+      setImageMain(listed_result);
+      console.log("LLLLLLLLLLLLLLLLLLLL");
+    } catch (e) {}
+  };
+  useEffect(() => {
+    runner();
+  }, []);
+
   return (
     <>
       <div className="cloud-main">
-        <h2 style={{ fontFamily: "Nothing You Could Do", color: "green" }}>
+        <h2
+          style={{ fontFamily: "Nothing You Could Do,cursive", color: "green" }}
+        >
           Take yorself
         </h2>
         <h1
@@ -57,7 +64,7 @@ function Cloud() {
             <>
               <div className="img-container">
                 <img
-                  src={emg.img}
+                  src={"http://localhost:3001/" + emg.img}
                   style={{
                     borderRadius: "50%",
 
@@ -65,19 +72,26 @@ function Cloud() {
                     width: 250,
                   }}
                 />
-                <h1 style={{ color: "#10221B" }}>{emg.title}</h1>
-                <p style={{ width: "200px" }}>{emg.description}</p>
-                <button
-                  onClick={enquire}
-                  style={{
-                    background: "#10221B",
-                    color: "#fff",
-                    padding: 9,
-                    border: "none",
-                  }}
-                >
-                  {emg.button}
-                </button>
+                <div style={{ textAlign: "center" }}>
+                  <h1 style={{ color: "#10221B" }}>{emg.title}</h1>
+                  <p>{emg.description}</p>
+                  <p>
+                    Price <b>{emg.price}</b>
+                  </p>
+                  <button
+                    onClick={() => {
+                      enquire(emg.id);
+                    }}
+                    style={{
+                      background: "#10221B",
+                      color: "#fff",
+                      padding: 9,
+                      border: "none",
+                    }}
+                  >
+                    Book
+                  </button>
+                </div>
               </div>
             </>
           );
@@ -97,7 +111,7 @@ function Cloud() {
             // marginLeft:'2px'
           }}
         >
-          <div style={{display:'flex',flexWrap:'wrap'}}>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
             <div className="cloud-description">
               <h1>Making Adventure tours,activities affordable.</h1>
               <hr style={{ width: "100px", marginLeft: "0" }} />
