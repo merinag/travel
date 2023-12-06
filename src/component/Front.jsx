@@ -9,7 +9,7 @@ const Headers = (props) => {
         setAmount(e.target.value)
     }
     const handleKeyDown = (event) => {
-        if (event.key === 'Enter') {
+        if (event.key === 'keyEnter') {
             // 👇 Get input value
             setAmount(event.target.value);
             console.log('merina');
@@ -41,7 +41,8 @@ const Headers = (props) => {
             <div>
                 <Search inputhandler={inputHandler} />
             </div>
-            <label htmlFor="number"><h2>Enter No.of pic </h2></label>                <input className="inputs input2" placeholder="enter amount"
+            <label htmlFor="number"><h2>Enter No.of pic </h2></label>
+            <input className="inputs input2" placeholder="enter amount"
                 onKeyDown={handleKeyDown}
                 type="number"
                 onChange={inputNumber}
