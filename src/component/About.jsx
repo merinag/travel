@@ -5,10 +5,11 @@ import { Link, useNavigate } from "react-router-dom";
 import flag from "./image/ehio.jpg";
 import camel from "./image/camel.jpg";
 import church from "./image/church.jpg";
-import TimeCounter from "./timercounter";
-import Slideshow from "./imageslideshow";
-import { Slide } from "react-slideshow-image";
-import AutoCounter from "./autocount";
+import img1 from "./image/spahaa.jpg";
+import img2 from "./image/spachjd.jpg";
+import img3 from "./image/spgonder.jpg";
+
+import Footer from "./footer";
 // import Show from "./show";
 
 function About() {
@@ -22,7 +23,7 @@ function About() {
         className="header "
         style={{ backgroundImage: ` url(${require("./image/poot.avif")})` }}
       >
-        <Header isIn="about" />
+        <Header />
         <div
           style={{
             display: "flex",
@@ -61,7 +62,7 @@ function About() {
           activities that makes you thrilled.
         </h1>
         <hr style={{ width: "100px", marginLeft: "0" }} />
-        <p style={{ width: 700, color: "rgba(0, 0, 0, 0.501)" }}>
+        <p style={{ width: 700 }}>
           Welcome to Adventure travel, your ultimate guide to the enchanting
           world of Ethiopian travel. Our journey through this mesmerizing land
           began with a passion for exploring the rich tapestry of cultures,
@@ -105,7 +106,7 @@ function About() {
           Adventure brings the best in you
         </h1>
         <hr style={{ width: "100px", marginLeft: "0", color: "green" }} />
-        <p style={{ width: 700, color: "rgba(0, 0, 0, 0.501)" }}>
+        <p style={{ width: 700 }}>
           With years of exploration and cultural immersion under our belts, our
           team is well-versed in every nook and cranny of Ethiopia. We've
           climbed the peaks, savored the cuisine, and celebrated the festivals.
@@ -113,34 +114,14 @@ function About() {
           experiences just for you.
         </p>
       </div>
-      <div>
-        {/* <TimeCounter/> */}
-        <AutoCounter name="Counter A" maxCount={5} intervalMs={1000} />
-        <AutoCounter name="Counter B" maxCount={10} intervalMs={500} />
-        <AutoCounter name="Counter C" maxCount={15} intervalMs={200} />
+      <div className="about-imag">
+        <img src={img1} />
+        <img src={img2} />
+        <img src={img3} />
       </div>
-
-      {/* <div
-        className="rotate-img"
-        style={{ backgroundImage: ` url(${require("./image/compass.jpg")})` }}
-      ></div>
       <div>
-       
-      </div> */}
-
-      {/* <div>
-          <h2>About</h2>
-          <a href="mailto:merina@gmail.com">merina@gmail.com</a>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31632.605625750304!2d36.817373964972724!3d7.675010809868106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2set!4v1695671179974!5m2!1sen!2set"
-            width="600"
-            height="450"
-            style={{border:0}}
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div> */}
+        <Footer />
+      </div>
     </>
   );
 }

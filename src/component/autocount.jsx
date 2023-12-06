@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 function AutoCounter({ name = 'Counter', maxCount = 10, intervalMs = 1000 }) {
   const [count, setCount] = useState(0);
+  
 
   useEffect(() => {
     const timer = setInterval(() => {
