@@ -28,7 +28,11 @@ function Cloud() {
 
   const runner = async () => {
     try {
-      const result = await axios.get('http://localhost:3001/bookings');
+      const result = await axios.get('http://localhost:3001/bookings' , {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
       const listed_result = await result.data;
       console.log('LLLLLLLLLLLLLLLLLLLL');
       console.log(listed_result);

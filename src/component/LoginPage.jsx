@@ -19,7 +19,7 @@ const LoginPage = () => {
           toast("logged in successfuly!", {
             autoClose: 1000,
             onClose: () => {
-              navigate("/book");
+              navigate("/");
             },
           });
         }
