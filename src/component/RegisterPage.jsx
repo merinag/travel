@@ -21,7 +21,7 @@ const RegisterPage = () => {
         email,
       })
       .then((response) => {
-        if ( response.status == 200) {
+        if (response.status == 200) {
           toast("register in successfuly!", {
             autoClose: 1000,
             onClose: () => {
@@ -33,12 +33,11 @@ const RegisterPage = () => {
 
       .catch((error) => {
         alert(error);
-        // response.status(500).json({ error: "An error occurred" });
         console.log(error);
       });
   }
   return (
-    <div
+    <div className="form-cont"
       style={{
         width: "100%",
         height: "100vh",
@@ -49,26 +48,30 @@ const RegisterPage = () => {
       }}
     >
       <ToastContainer />
-      <div className="contact-form" style={{ maxWidth: "min-content" }}>
-        <form style={{ display: "flex", flexDirection: "column", width: 550 }}>
+      <h1>Welcome to Tour and Travel</h1>
+      <div style={{ maxWidth: "min-content" }}>
+        <form style={{ display: "flex", flexDirection: "column", width: 300 }}>
+          <p>Name</p>
           <input
             type="text"
-            
+
             value={name}
             onChange={(e) => {
               setName(e.target.value);
             }}
             placeholder="Name"
           />
+          <p>Email</p>
           <input
             type="text"
-            
+
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
             }}
             placeholder="Email"
           />
+          <p>Username</p>
           <input
             type="text"
             value={username}
@@ -77,27 +80,44 @@ const RegisterPage = () => {
             }}
             placeholder="Username"
           />
+          <p>Password</p>
           <input
             type="password"
-            
+
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
             }}
             placeholder="Password"
           />
-          <button onClick={submitreg} style={{ color: "black" }}>
+          <button onClick={submitreg} style={{
+            color: "white",
+            backgroundColor: "rgba(0, 128, 0, 0.563)",
+            padding: '3px 6px',
+            borderRadius: '8px',
+            marginTop: '12px',
+            border: '1px solid rgba(0, 128, 0, 0.563)'
+          }}>
             REGISTER
           </button>
         </form>
       </div>
-      <div style={{display:"flex"}}>
+      <div style={{ display: "flex", marginTop: '8px', gap: '8px' }}>
         if registered click {" "}
-        <span>
+        <span >
           {" "}
-          <Link to="/login"> here</Link>
+          <Link style={{
+            color: 'white',
+            textDecoration: 'none',
+            backgroundColor: ' rgba(0, 128, 0, 0.563)',
+            padding: '5px',
+            borderRadius: '5px'
+
+          }}
+            to="/login"> here</Link>
         </span>
       </div>
+
     </div>
   );
 };

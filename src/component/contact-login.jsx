@@ -8,33 +8,33 @@ function Contactlogin() {
   const [firstName, setFirstNmae] = useState("");
   const [lastName, setLastName] = useState("");
   const [message, setMessage] = useState("");
-  
+
 
   function submitreg(e) {
-  
+
     axios
       .post("http://localhost:3001/contact-regi", {
         firstName,
         lastName,
         message,
-        
+
       })
       .then((response) => {
         // setIsRegistering(!isRegistering);  
         console.log(response.data)
-        })
+      })
 
       .catch((error) => {
         // response.status(500).json({ error: "An error occurred" });
         console.log(error)
       });
-      // setIsRegistering(!isRegistering);
-    }
+    // setIsRegistering(!isRegistering);
+  }
 
-  
+
   const toggleForm = () => {
     // Toggle between REGISTER and LOGIN forms
-    setIsRegistering((e)=>!e);
+    setIsRegistering((e) => !e);
   };
 
   const renderForm = () => {
@@ -55,14 +55,14 @@ function Contactlogin() {
             />
             <input
               type="text"
-             name="lastName"
+              name="lastName"
               value={lastName}
               onChange={(e) => {
                 setLastName(e.target.value);
               }}
               placeholder="LastName"
             />
-           
+
             <input
               type="textarea"
               name="message"
@@ -110,7 +110,7 @@ function Contactlogin() {
       //       </button>
       //     </form>
       //   </div>
-    //   );
+      //   );
     }
   };
 

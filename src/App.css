@@ -479,6 +479,22 @@
   border-width: 200px;
   border: 1px solid rgba(0, 0, 0, 0.501);
 }
+.form-cont p{
+  font-weight: bold;
+  margin-top: 8px;
+}
+.form-cont input{
+  border-radius: 5px;
+ border: solid 1px gray;
+ padding: 3px 6px;
+}
+.form-cont input:focus{
+  border-color: rgba(0, 128, 0, 0.563);
+  border-width: 2px;
+}
+*{
+  outline: none !important;
+}
 .contact-form input,
 .contact-form button {
   padding: 30px;

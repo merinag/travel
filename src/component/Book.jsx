@@ -58,7 +58,7 @@ const Booking = ({ tour, avgRating }) => {
   return (
     <div>
       <ToastContainer />
-      <div
+      <div className="form-cont"
         style={{
           width: '100%',
           height: '100vh',
@@ -69,17 +69,16 @@ const Booking = ({ tour, avgRating }) => {
         }}
       >
 
-        <h5>Information</h5>
+        <h1>Information</h1>
         <h2>{title}</h2>
-        <div className="contact-form" style={{ maxWidth: 'min-content' }}>
-          <form
-
-            style={{
-              borderWidth: '400px',
-              display: 'flex',
-              flexDirection: 'column',
-            }}
+        <div style={{ maxWidth: "min-content" }}>
+          <form style={{
+            borderWidth: '400px',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
           >
+            <p>Phone</p>
             <input
               type="tel"
               placeholder="Phone"
@@ -87,7 +86,7 @@ const Booking = ({ tour, avgRating }) => {
               required
               onChange={handleChange}
             />
-
+            <p>Date</p>
             <input
               type="date"
               placeholder=""
@@ -95,13 +94,7 @@ const Booking = ({ tour, avgRating }) => {
               required
               onChange={handleChange}
             />
-            {/* <input
-              type="text"
-              placeholder="place"
-              id="place"
-              required
-              onChange={handleChange}
-            /> */}
+            <p>Guest</p>
             <input
               type="number"
               placeholder="Guest"
@@ -109,7 +102,14 @@ const Booking = ({ tour, avgRating }) => {
               required
               onChange={handleChange}
             />
-            <input onClick={submit} type="submit" value={'submit'} />
+            <input onClick={submit} type="submit" value={'submit'} style={{
+              color: "white",
+              backgroundColor: "rgba(0, 128, 0, 0.563)",
+              padding: '3px 6px',
+              borderRadius: '8px',
+              marginTop: '12px',
+              border: '1px solid rgba(0, 128, 0, 0.563)'
+            }} />
           </form>
         </div>
       </div>

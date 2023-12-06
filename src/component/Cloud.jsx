@@ -73,7 +73,7 @@ function Cloud() {
                   <h1 style={{ color: '#10221B' }}>{emg.title}</h1>
                   <p>{emg.description}</p>
                   <p>
-                    Price <b>{emg.price}</b>
+                    Price <b>{emg.price} birr</b>
                   </p>
                   <button
                     onClick={() => {

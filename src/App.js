@@ -12,6 +12,7 @@ import Login from './component/LoginPage';
 import Booking from './component/Book';
 import Add from './component/add';
 import Bookings from './component/Bookings';
+import Aaa from './component/Aaa';
 function App() {
   return (
     <>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/book" element={<Booking />} />
           <Route path="/add" element={<Add />} />
+          <Route path="/aa" element={<Aaa />} />
           {/* <Route path="/bb" element={<Bookings />} /> */}
         </Routes>
       </div>

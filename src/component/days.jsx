@@ -26,9 +26,9 @@ function Days() {
               Our Footprints
             </h1>
             <p style={{ width: 500 }}>
-              Tempor incididunt at labore. et solore magna aliqua. quis ipsum
-              suspendisse ultrices gravida. risus commodo vivverra maecenas
-              accumsan lacus vel facilisis.
+              Time to fall at work. and some great solos. who himself
+              suspended pregnancy risus commodo vivverra maecenas
+              a layer of lakes or facilites.
             </p>
           </div>
           <div className="days-counter">

@@ -35,7 +35,7 @@ const LoginPage = () => {
       });
   }
   return (
-    <div className="loginpage"
+    <div className="form-cont"
       style={{
         width: "100%",
         height: "100vh",
@@ -46,8 +46,9 @@ const LoginPage = () => {
       }}
     >
       <ToastContainer />
-      <div className="contact-form" style={{ maxWidth: "min-content" }}>
-        {}
+      <h1>Welcome to Tour and Travel</h1>
+      <div style={{ maxWidth: "min-content" }}>
+        {/* { } */}
         <form
           style={{
             borderWidth: "400px",
@@ -55,6 +56,7 @@ const LoginPage = () => {
             flexDirection: "column",
           }}
         >
+          <p>Username</p>
           <input
             type="text"
             value={username}
@@ -63,6 +65,7 @@ const LoginPage = () => {
             }}
             placeholder="Username"
           />
+          <p>Password</p>
           <input
             type="password"
             value={password}
@@ -71,18 +74,33 @@ const LoginPage = () => {
             }}
             placeholder="Password"
           />
-          <button onClick={submitlog} style={{ color: "black" }}>
+          <button onClick={submitlog} style={{
+            color: "white",
+            backgroundColor: "rgba(0, 128, 0, 0.563)",
+            padding: '3px 6px',
+            borderRadius: '8px',
+            marginTop: '12px',
+            border: '1px solid rgba(0, 128, 0, 0.563)'
+          }}>
             LOGIN
           </button>
         </form>
       </div>
-      <div style={{ display: "flex" }}>
-        if not registered click{" "}
-        <span>
+      <div style={{ display: "flex", marginTop: '8px', gap: '8px' }}>
+        if not registered click {" "}
+        <span >
           {" "}
-          <Link to="/register"> here</Link>
+          <Link style={{
+            color: 'white',
+            textDecoration: 'none',
+            backgroundColor: ' rgba(0, 128, 0, 0.563)',
+            padding: '5px',
+            borderRadius: '5px'
+
+          }}
+            to="/register"> here</Link>
         </span>
-      </div>{" "}
+      </div>
     </div>
   );
 };
