@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import { baseUrl } from "../constants";
+import Cloud from "./Cloud";
 
 function Add() {
   const [books, setBooks] = useState([]);
@@ -54,6 +55,7 @@ function Add() {
 
             <button onClick={() => handleAdd(book)}>Add</button>
           </div>
+
         ))}
       </div>
     </div>

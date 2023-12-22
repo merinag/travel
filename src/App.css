@@ -653,9 +653,9 @@
 }
 
 .avatar {
-  min-height: 20px;
-  min-width: 20px;
-  padding: 10px;
+  min-height: 10px;
+  min-width: 10px;
+  padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;

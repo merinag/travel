@@ -3,15 +3,6 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Home from "./component/home";
-import About from "./component/About";
-import Contact from "./component/contact";
-import Adventures from "./component/adventures";
-import Register from "./component/RegisterPage";
-import Login from "./component/LoginPage";
-import Booking from "./component/Book";
-import Add from "./component/add";
-import axios  from "axios";
 
 import Home from './component/home';
 import About from './component/About';
@@ -22,6 +13,7 @@ import Login from './component/LoginPage';
 import Booking from './component/Book';
 import Add from './component/add';
 import Bookings from './component/Bookings';
+import axios from "axios"
 import Aaa from './component/Aaa';
 
 function App() {
@@ -40,10 +32,9 @@ function App() {
     } catch (e) {
       setLoginoggedIn(false)
     }
-  
+
   };
-  useEffect(()=>{
-},[loginoggedIn])
+
   useEffect(() => {
     runner();
   }, []);
